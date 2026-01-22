@@ -67,7 +67,6 @@
         }
         .tab-menu button.active-btn { background: var(--primary-pink); color: white; }
         
-        /* Challengeボタン（スイッチ）のスタイル */
         .tab-menu button#btn-challenge { border-color: #5d4037; color: #5d4037; }
         .tab-menu button#btn-challenge.challenge-on { background: #5d4037; color: white; }
 
@@ -88,7 +87,6 @@
             background: #fff; position: relative;
         }
         
-        /* ChallengeモードがONの時の「？」表示 */
         .challenge-mode-active td:not(.vowel-label):not(.empty-col) .kana,
         .challenge-mode-active td:not(.vowel-label):not(.empty-col) .romaji {
             visibility: hidden;
@@ -97,12 +95,11 @@
             content: "?"; color: #eee; font-size: 14px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
         }
 
-        /* ヒント表示（正解・間違い時） */
         .show-cell .kana, .show-cell .romaji { visibility: visible !important; }
         .show-cell::after { display: none !important; }
 
         .target-cell { border: 3px solid var(--target-mark) !important; background-color: #fff0f5 !important; z-index: 5; }
-        .vowel-label { background: var(--soft-pink); color: var(--accent-pink); font-size: 13px; font-weight: bold; width: 25px; border: none; }
+        .vowel-label { background: var(--soft-pink); color: var(--accent-pink); font-size: 11px; font-weight: bold; width: 30px; border: none; }
         .kana { font-size: 18px; font-weight: 700; color: #333; display: block; line-height: 1; }
         .romaji { font-size: 9px; color: var(--primary-pink); display: block; opacity: 0.8; }
 
@@ -162,8 +159,8 @@
 
 <script>
     const charts = {
-        basic: [[0,0,"あ","a"],[0,1,"い","i"],[0,2,"う","u"],[0,3,"え","e"],[0,4,"お","o"],[1,0,"か","ka"],[1,1,"き","ki"],[1,2,"く","ku"],[1,3,"け","ke"],[1,4,"こ","ko"],[2,0,"さ","sa"],[2,1,"し","shi"],[2,2,"す","su"],[2,3,"せ","se"],[2,4,"そ","so"],[3,0,"た","ta"],[3,1,"ち","chi"],[3,2,"つ","tsu"],[3,3,"て","te"],[3,4,"と","to"],[4,0,"な","na"],[4,1,"に","ni"],[4,2,"ぬ","nu"],[4,3,"ね","ne"],[4,4,"の","no"],[5,0,"は","ha"],[5,1,"ひ","hi"],[5,2,"ふ","fu"],[5,3,"へ","he"],[5,4,"ほ","ho"],[6,0,"ま","ma"],[6,1,"み","mi"],[6,2,"む","mu"],[6,3,"め","me"],[6,4,"も","mo"],[7,0,"や","ya"],[7,2,"ゆ","yu"],[7,4,"よ","yo"],[8,0,"ら","ra"],[8,1,"り","ri"],[8,2,"る","ru"],[8,3,"れ","re"],[8,4,"ろ","ro"],[9,0,"わ","wa"],[9,2,"を","wo"],[9,4,"ん","nn"],[11,0,"が","ga"],[11,1,"ぎ","gi"],[11,2,"ぐ","gu"],[11,3,"げ","ge"],[11,4,"ご","go"],[12,0,"ざ","za"],[12,1,"じ","ji"],[12,2,"ず","zu"],[12,3,"ぜ","ze"],[12,4,"ぞ","zo"],[13,0,"だ","da"],[13,1,"ぢ","ji"],[13,2,"づ","zu"],[13,3,"で","de"],[13,4,"ど","do"],[14,0,"ば","ba"],[14,1,"び","bi"],[14,2,"ぶ","bu"],[14,3,"べ","be"],[14,4,"ぼ","bo"],[15,0,"ぱ","pa"],[15,1,"ぴ","pi"],[15,2,"ぷ","pu"],[15,3,"ぺ","pe"],[15,4,"ぽ","po"]],
-        contracted: [[0,0,"きゃ","kya"],[0,2,"きゅ","kyu"],[0,4,"きょ","kyo"],[1,0,"しゃ","sya"],[1,2,"しゅ","syu"],[1,4,"しょ","syo"],[2,0,"ちゃ","cya"],[2,2,"ちゅ","cyu"],[2,4,"ちょ","cyo"],[3,0,"にゃ","nya"],[3,2,"にゅ","nyu"],[3,4,"にょ","nyo"],[4,0,"ひゃ","hya"],[4,2,"ひゅ","hyu"],[4,4,"ひょ","hyo"],[5,0,"みゃ","mya"],[5,2,"みゅ","myu"],[5,4,"みょ","myo"],[6,0,"りゃ","rya"],[6,2,"りゅ","ryu"],[6,4,"りょ","ryo"],[8,0,"ぎゃ","gya"],[8,2,"ぎゅ","gyu"],[8,4,"ぎょ","gyo"],[9,0,"じゃ","zya"],[9,2,"じゅ","zyu"],[9,4,"じょ","zyo"],[10,0,"びゃ","bya"],[10,2,"びゅ","byu"],[10,4,"びょ","byo"],[11,0,"ぴゃ","pya"],[11,2,"ぴゅ","pyu"],[11,4,"ぴょ","pyo"]],
+        basic: [[0,0,"あ","a"],[0,1,"い","i"],[0,2,"う","u"],[0,3,"え","e"],[0,4,"お","o"],[1,0,"か","ka"],[1,1,"き","ki"],[1,2,"く","ku"],[1,3,"け","ke"],[1,4,"こ","ko"],[2,0,"さ","sa"],[2,1,"し","shi"],[2,2,"す","su"],[2,3,"せ","se"],[2,4,"そ","so"],[3,0,"た","ta"],[3,1,"ち","chi"],[3,2,"つ","tsu"],[3,3,"て","te"],[3,4,"と","to"],[4,0,"な","na"],[4,1,"に","ni"],[4,2,"ぬ","nu"],[4,3,"ネ","ne"],[4,4,"の","no"],[5,0,"は","ha"],[5,1,"ひ","hi"],[5,2,"ふ","fu"],[5,3,"へ","he"],[5,4,"ほ","ho"],[6,0,"ま","ma"],[6,1,"み","mi"],[6,2,"む","mu"],[6,3,"め","me"],[6,4,"も","mo"],[7,0,"や","ya"],[7,2,"ゆ","yu"],[7,4,"よ","yo"],[8,0,"ら","ra"],[8,1,"り","ri"],[8,2,"る","ru"],[8,3,"れ","re"],[8,4,"ろ","ro"],[9,0,"わ","wa"],[9,2,"を","wo"],[9,4,"ん","nn"],[11,0,"が","ga"],[11,1,"ぎ","gi"],[11,2,"ぐ","gu"],[11,3,"げ","ge"],[11,4,"ご","go"],[12,0,"ざ","za"],[12,1,"じ","ji"],[12,2,"ず","zu"],[12,3,"ぜ","ze"],[12,4,"ぞ","zo"],[13,0,"だ","da"],[13,1,"ぢ","ji"],[13,2,"づ","zu"],[13,3,"で","de"],[13,4,"ど","do"],[14,0,"ば","ba"],[14,1,"び","bi"],[14,2,"ぶ","bu"],[14,3,"べ","be"],[14,4,"ぼ","bo"],[15,0,"ぱ","pa"],[15,1,"ぴ","pi"],[15,2,"ぷ","pu"],[15,3,"ぺ","pe"],[15,4,"ぽ","po"]],
+        contracted: [[0,0,"きゃ","kya"],[0,2,"きゅ","kyu"],[0,4,"きょ","kyo"],[1,0,"しゃ","sha"],[1,2,"しゅ","shu"],[1,4,"しょ","sho"],[2,0,"ちゃ","cha"],[2,2,"ちゅ","chu"],[2,4,"ちょ","cho"],[3,0,"にゃ","nya"],[3,2,"にゅ","nyu"],[3,4,"にょ","nyo"],[4,0,"ひゃ","hya"],[4,2,"ひゅ","hyu"],[4,4,"ひょ","hyo"],[5,0,"みゃ","mya"],[5,2,"みゅ","myu"],[5,4,"みょ","myo"],[6,0,"りゃ","rya"],[6,2,"りゅ","ryu"],[6,4,"りょ","ryo"],[8,0,"ぎゃ","gya"],[8,2,"ぎゅ","gyu"],[8,4,"ぎょ","gyo"],[9,0,"じゃ","ja"],[9,2,"じゅ","ju"],[9,4,"じょ","jo"],[10,0,"びゃ","bya"],[10,2,"びゅ","byu"],[10,4,"びょ","byo"],[11,0,"ぴゃ","pya"],[11,2,"ぴゅ","pyu"],[11,4,"ぴょ","pyo"]],
         foreign: [[0,0,"ふぁ","fa"],[0,1,"ふぃ","fi"],[0,3,"ふぇ","fe"],[0,4,"ふぉ","fo"],[2,1,"てぃ","thi"],[2,3,"ちぇ","che"],[3,1,"でぃ","dhi"],[3,2,"でゅ","dhu"],[5,3,"じぇ","je"],[6,3,"しぇ","she"],[8,0,"ゔぁ","va"],[8,1,"ゔぃ","vi"],[8,2,"ゔ","vu"],[8,3,"ゔぇ","ve"],[8,4,"ゔぉ","vo"],[9,1,"うぃ","wi"],[9,3,"うぇ","we"],[9,4,"うぉ","who"]]
     };
 
@@ -175,7 +172,9 @@
     function renderSingleTable(mode, labelText) {
         const list = charts[mode];
         const maxCol = Math.max(...list.map(d => d[0]));
-        const labels = (mode === 'contracted') ? ["ya","","yu","","yo"] : ["a","i","u","e","o"];
+        // 拗音モードの時だけ ya/yu/yo ラベルにする
+        const labels = (mode === 'contracted') ? ["a/ya","i","u/yu","e","o/yo"] : ["a","i","u","e","o"];
+        
         let html = `<div><small style="color:var(--primary-pink); font-weight:bold;">${labelText}</small><table>`;
         for (let r = 0; r < 5; r++) {
             html += `<tr><td class="vowel-label">${labels[r]}</td>`;
@@ -219,7 +218,6 @@
             btn.innerText = "Challenge ✨ OFF";
             displayArea.classList.remove('challenge-mode-active');
         }
-        // セルのハイライトなどを一度クリア
         document.querySelectorAll('td').forEach(td => td.classList.remove('target-cell', 'show-cell'));
     }
 
@@ -244,16 +242,29 @@
         document.getElementById('feedback').innerText = '';
         document.getElementById('next-btn').style.display = 'none';
         document.getElementById('check-btn').style.display = 'inline-block';
-        
-        // 次の問題に行く時はまた隠す（ヒント表示クラスを消す）
         document.querySelectorAll('td').forEach(td => td.classList.remove('target-cell', 'show-cell'));
     }
 
     function check() {
         const val = document.getElementById('answer-input').value.toLowerCase().trim();
+        if(!val) return;
+
         const kana = currentQ.data[2];
         const ans = currentQ.data[3];
-        let isCorrect = (val === ans) || (kana === 'しゃ' && val === 'sha') || (kana === 'しゅ' && val === 'shu') || (kana === 'しょ' && val === 'sho') || (kana === 'ちゃ' && val === 'cha') || (kana === 'ちゅ' && val === 'chu') || (kana === 'ちょ' && val === 'cho') || (kana === 'じゃ' && (val === 'ja' || val === 'jya')) || (kana === 'じゅ' && (val === 'ju' || val === 'jyu')) || (kana === 'じょ' && (val === 'jo' || val === 'jyo')) || (kana === 'ふ' && val === 'hu') || (kana === 'し' && val === 'si') || (kana === 'ち' && val === 'ti') || (kana === 'つ' && val === 'tu');
+
+        // 最新の強力な判定ロジック
+        let isCorrect = (val === ans);
+        if (!isCorrect) {
+            const alt = {
+                'し': ['si'], 'しゃ': ['sya'], 'しゅ': ['syu'], 'しょ': ['syo'],
+                'ち': ['ti'], 'ちゃ': ['tya', 'cya'], 'ちゅ': ['tyu', 'cyu'], 'ちょ': ['tyo', 'cyo'],
+                'つ': ['tu'], 'ふ': ['hu'],
+                'じ': ['zi'], 'じゃ': ['zya', 'ja'], 'じゅ': ['zyu', 'ju'], 'じょ': ['zyo', 'jo'],
+                'を': ['o'], 'ん': ['n'], 'ぢ': ['ji', 'di'], 'づ': ['zu', 'du'],
+                'ゔぁ': ['va'], 'ゔぃ': ['vi'], 'ゔ': ['vu'], 'ゔぇ': ['ve'], 'ゔぉ': ['vo']
+            };
+            if (alt[kana] && alt[kana].includes(val)) isCorrect = true;
+        }
 
         if (isCorrect) {
             document.getElementById('feedback').innerText = 'Correct! ✨';
@@ -262,12 +273,10 @@
             document.getElementById('answer-input').disabled = true;
             document.getElementById('check-btn').style.display = 'none';
             document.getElementById('next-btn').style.display = 'inline-block';
-            document.getElementById('next-btn').focus();
             showTargetCell(true);
         } else {
             document.getElementById('feedback').innerText = 'Check the chart💡';
             document.getElementById('feedback').style.color = '#ff6347';
-            document.getElementById('answer-input').value = '';
             showTargetCell(true); 
         }
     }
